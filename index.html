@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>MOS Test</title>
+    </head>
+
+    <body>
+
+        <!-- 注意書きなど -->
+        <div style="border:1px solid #000000; padding: 10px; border-radius: 0px; background: ##ffffff;">
+            <p>
+                <h1>MOS-Intelligibility Test</h1>
+
+                Thank you for your cooperation in my experiment.</br>
+                This experiment is MOS-Intelligibility test.</br>
+                Listen to the voices and give it the score you think it deserves.</br>
+                I will explain the experimental procedure.
+
+                <h2>Experimental Procedure</h2>
+                <ol>
+                    <li>Enter your name and select the setlist number.</li>
+                    <li>Press "Start Experiment" button.</li>
+                    <li>Listen to the voices and give it the score you think it deserves.<br>
+                        The evaluation criteria is intelligibility (Intelligibility: The clarity of the linguistic content of the speech and how easily it can be understood). <br>
+						(Evaluation Level: 4-Fully understand 3-Mostly understand 2-Partially understand 1-Not understand at all)</li>
+						
+                    <li>Press "next" button and start next evaluation.</li>
+                    <li>When you finish this experiment, press "finish" button and download the result.</li>
+                </ol>
+
+                <h2>Notes</h2>
+                <ul>
+                    <li>This experiment takes about 15-20 minutes.</li>
+                    <li>Please do not update the page during this experiment.</li>
+                    <li>You may not be able to download the results on your phone, so please use your PC.</li>
+                    <li>Please use headphones for this experiment.</li>
+                </ul>
+
+                <h2>実験手順</h2>
+                <ol>
+                    <li>"Your name"にアンケート用の名前を入力し、"Setlist number"の番号を選んで下さい。</li>
+                    <li>"next"を押して下さい。</li>
+                    <li>音声を聴き、相応しいと思った評価を選択して下さい。評価基準は理解度（理解度：スピーチの言語内容の明瞭さとそれがどれだけ容易に理解できるか）です。<br>
+                        （評価レベル：4-完全に理解している 3-ほとんど理解している 2-部分的に理解している 1-全く理解していない）</li>
+                    <li>選択を終えたら"next"ボタンを押し、次の実験に進んで下さい。</li>
+                    <li>評価実験を全て終えたら"finish"ボタンを押して結果のcsvファイルをダウンロードして下さい。</li>
+                    <li>ウェブページを再読み込んで、"Your name"に名前（CrowdWorksのユーザ名）を入力し、"Setlist number"に２のセット番号を選んで下さい。</li>
+                    <li>手順２〜５を一回繰り返して下さい。</li>
+                    <li>二つのcsvファイルは添付して下さい。</li>
+                </ol>
+
+                <h2>注意</h2>
+                <ul>
+                    <li>この実験は凡そ20分ほど要します。</li>
+                    <li>実験中はページの再読み込みは行わないで下さい。</li>
+                    <li>スマートフォンでは結果をダウンロードできない場合があるのでPCを使用して下さい。</li>
+                    <li>ヘッドホンやイヤホンを着用した状態で行って下さい。</li>
+                </ul>
+            </p>
+        </div>
+
+        <script type="text/javascript" src="mos.js"></script>
+
+        <div id="Display1">
+            <p> Your name: <br>
+            <input type="text" id="name" value=""></p>
+            <p> Setlist number: <br>
+            <label><input type="radio" name="set" id="number" value="1">1</label><br>
+            <p>
+            <p> Setlist number: <br>
+                <label><input type="radio" name="set" id="number" value="2">2</label><br>
+            <p>
+            <button id="next1" onclick="start_experiment()">next</button>
+            </p>
+        </div>
+
+
+        <div id="Display2" style="display:none;">
+        <!-- 注意書きなど <body onload="init()"> -->
+            <p id="page"></p>
+            <p id="audio"></p>
+            <p>
+            <label><input type="radio" name="eval" onclick="evaluation()">全く理解していない</label><br>
+            <label><input type="radio" name="eval" onclick="evaluation()">部分的に理解している</label><br>
+            <label><input type="radio" name="eval" onclick="evaluation()">ほとんど理解している</label><br>
+            <label><input type="radio" name="eval" onclick="evaluation()">完全に理解している</label><br</p>
+
+        <p>
+        <button id="prev" onclick="prev()">prev</button>
+        <button id="next2" onclick="next()">next</button>
+        <button id="finish" onclick="finish()">finish</button>
+        </p>
+
+        <div id="Display3" style="display:none;">
+            <!-- 注意書きなど <body onload="init()"> -->
+                <p id="page"></p>
+                <p id="audio"></p>
+                <p id="text"></p>
+                <p>
+                <label><input type="radio" name="eval" onclick="evaluation()">全く理解していない</label><br>
+                <label><input type="radio" name="eval" onclick="evaluation()">部分的に理解している</label><br>
+                <label><input type="radio" name="eval" onclick="evaluation()">ほとんど理解している</label><br>
+                <label><input type="radio" name="eval" onclick="evaluation()">完全に理解している</label><br</p>
+    
+        <p>
+        <button id="prev" onclick="prev()">prev</button>
+        <button id="next2" onclick="next()">next</button>
+        <button id="finish" onclick="finish()">finish</button>
+        </p>
+
+
+    </body>
+
+</html>
