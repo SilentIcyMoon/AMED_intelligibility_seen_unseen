@@ -15,7 +15,6 @@ function invalid_enter() {
         return false;
     }
 }
-
 var set_num = "0"
 // start experiment
 function start_experiment() {
@@ -50,18 +49,17 @@ function start_experiment() {
     */
     if (set_num == "1") {
         method_paths.push(wav_dir + "set" + set_num + "/src.list");
-		method_paths.push(wav_dir + "set" + set_num + "/trg.list");
-		method_paths.push(wav_dir + "set" + set_num + "/converted.list");
-		method_paths.push(wav_dir + "set" + set_num + "/el1.list");
-		method_paths.push(wav_dir + "set" + set_num + "/sp1.list");
+	method_paths.push(wav_dir + "set" + set_num + "/trg.list");
+	method_paths.push(wav_dir + "set" + set_num + "/converted.list");
+	method_paths.push(wav_dir + "set" + set_num + "/el1.list");
+	method_paths.push(wav_dir + "set" + set_num + "/sp1.list");
     } else if (set_num == "2") {
         // for seen test
         method_paths.push(wav_dir + "set" + set_num + "/src.list");
-		method_paths.push(wav_dir + "set" + set_num + "/trg.list");
-		method_paths.push(wav_dir + "set" + set_num + "/converted.list");
-		method_paths.push(wav_dir + "set" + set_num + "/el1.list");
-		method_paths.push(wav_dir + "set" + set_num + "/sp1.list");
-        // add corresponding text files
+	method_paths.push(wav_dir + "set" + set_num + "/trg.list");
+	method_paths.push(wav_dir + "set" + set_num + "/converted.list");
+	method_paths.push(wav_dir + "set" + set_num + "/el1.list");
+	method_paths.push(wav_dir + "set" + set_num + "/sp1.list");
         method_paths.push(wav_dir + "set" + set_num + "/src_text.list");
         method_paths.push(wav_dir + "set" + set_num + "/trg_text.list");
         method_paths.push(wav_dir + "set" + set_num + "/converted_text.list");
@@ -134,7 +132,8 @@ function makeFileList(method_paths) {
 }
 
 function setAudio() {
-    var audioName = file_list[n].split('.')[0]; // 获取音频文件名（无扩展名）
+    var audioPath = file_list[n]
+    var audioName = audioPath.split('/').pop().split('.')[0]; // 获取音频文件名（无扩展名）
     var audioText = set_num == "2" ? textMap[audioName] : ""; // 检索对应文本
     document.getElementById("page").textContent = "" + (n + 1) + "/" + scores.length;
 
