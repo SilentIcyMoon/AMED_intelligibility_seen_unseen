@@ -16,6 +16,7 @@ function invalid_enter() {
     }
 }
 
+var set_num = "0"
 // start experiment
 function start_experiment() {
     // get user name
@@ -26,7 +27,7 @@ function start_experiment() {
     }
 
     // get setlist number
-    var set_num = "0"
+    
     var number = document.getElementsByName("set");
     for (var i = 0; i < number.length; i++) {
         if (number[i].checked) {
@@ -244,7 +245,7 @@ function finish() {
 const wav_dir = "wav/";
 
 // invalid enter key
-document.onkeypress = invalid_enter();
+document.onkeypress = invalid_enter;
 
 // global variables
 var outfile;
